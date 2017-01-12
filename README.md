@@ -19,7 +19,7 @@ Example usage:
             declarations: [
                 SomeComponent,
                 mockDirective('app-main-menu'),
-                mockComponent('app-table-row', {methods: ['select'], inputs: ['product'], outputs: ''})
+                mockComponent('app-table-row', {methods: ['select'], inputs: ['product'], outputs: ['onSelected']})
             ],
             providers: [
                 {provide: AuthService, useClass: mockClass(['login', 'logout'])}
@@ -43,7 +43,12 @@ Creates mocked directive.
 
 Creates mocked component.  
 
-        mockComponent('app-table-row', {methods: ['select'], inputs: ['product'], outputs: ''})
+        mockComponent('app-table-row', {
+            methods: ['select'], 
+            inputs: ['product'], 
+            outputs: ['onSelected'],
+            template: '{{product.name}}'
+        })
 
 ## TestPage
         
