@@ -4,6 +4,7 @@ export interface MockDirectiveOptions {
     inputs: string[];
     outputs: string[];
     methods: string[];
+    template?: string;
 }
 
 export function mockClass(methods = []) {
@@ -16,7 +17,7 @@ export function mockComponent(selector, options = {}) {
     let mockOptions = options as MockDirectiveOptions;
     @Component({
         selector: selector,
-        template: `mocked-${selector}`,
+        template: mockOptions.template || `mocked-${selector}`,
         inputs: mockOptions.inputs || [],
         outputs: mockOptions.outputs || [],
     })
