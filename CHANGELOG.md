@@ -1,3 +1,8 @@
+# 1.2.0
+### Features
+
+* **testPage.getAll** gets all elements by css selector
+
 # 1.1.0
 ### Features
 

@@ -11,6 +11,12 @@ export class TestElement {
     return debugElement ? new TestElement(debugElement) : null;
   }
 
+  /** Returns array of descendants of current element by css selector. */
+  getAll(cssPath): Array<TestElement> {
+    const debugElements: Array<DebugElement> = this.debugElement.queryAll(By.css(cssPath));
+    return debugElements.map((debugElement) => new TestElement(debugElement));
+  }
+
   /** Returns text of current element. */
   textContent(): string {
     return this.nativeElement.textContent;

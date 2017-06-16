@@ -99,6 +99,12 @@ Returns descendant of current element by css selector as TestElement instance
         
         testPage.get('#some-section')
         
+#### getAll(cssSelector: string)
+        
+Returns descendants of current element by css selector as TestElement instances
+        
+        testPage.getAll('.some-class')        
+        
 #### textContent()
 
 Returns text of current element.
